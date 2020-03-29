@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "stepper",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

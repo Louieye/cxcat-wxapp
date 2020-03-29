@@ -1,0 +1,9 @@
+.button {
+  position: absolute;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
+  width: 95%;
+  bottom: 10rpx;
+}
+

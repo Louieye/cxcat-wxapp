@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "loading",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

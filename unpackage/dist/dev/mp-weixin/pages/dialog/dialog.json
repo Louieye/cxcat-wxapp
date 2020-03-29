@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "dialog",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

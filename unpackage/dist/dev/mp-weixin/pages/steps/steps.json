@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "steps",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

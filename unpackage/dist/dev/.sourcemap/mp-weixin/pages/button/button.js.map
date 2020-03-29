@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///F:/work/Vant-app/main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA,wCAAmB;;AAEnB;AACA,+M;AACAA,UAAU,CAACC,eAAD,CAAV,C","file":"pages/button/button.js","sourcesContent":["import 'uni-pages';import '@dcloudio/uni-stat';\n\nimport Vue from 'vue'\nimport Page from './pages/button/button.vue'\ncreatePage(Page)"],"sourceRoot":""}

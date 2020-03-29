@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "transition 动画",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

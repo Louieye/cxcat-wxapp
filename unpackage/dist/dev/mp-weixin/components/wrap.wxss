@@ -1,0 +1,12 @@
+
+.title.data-v-4c2288d9 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 14px;
+	color: rgba(69, 90, 100, 0.6);
+	padding: 20px 15px 15px;
+}
+.wrap.data-v-4c2288d9 {
+	padding: 10px;
+}
+

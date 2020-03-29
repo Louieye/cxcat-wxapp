@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "collapse折叠面板",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "toast",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

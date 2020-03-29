@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "notify",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

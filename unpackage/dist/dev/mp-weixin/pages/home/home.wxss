@@ -1,0 +1,14 @@
+.content swiper {
+  height: 380rpx;
+  margin-bottom: 20rpx;
+}
+.content image {
+  width: 100%;
+}
+.main text {
+  font-size: 35rpx;
+  color: #3f3f3f;
+  font-weight: 550;
+  margin-left: 20rpx;
+}
+

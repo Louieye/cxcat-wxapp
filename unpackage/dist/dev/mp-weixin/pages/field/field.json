@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Field 输入框",
+  "usingComponents": {
+    "wrap": "/components/wrap"
+  }
+}

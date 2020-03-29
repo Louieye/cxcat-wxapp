@@ -1,0 +1,24 @@
+.price.data-v-5da2c81c {
+  text-align: left;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #ff4444;
+  margin-bottom: 20rpx;
+}
+.tab.data-v-5da2c81c {
+  width: 100%;
+}
+.main.data-v-5da2c81c {
+  background-color: #f1f1f1;
+}
+.list.data-v-5da2c81c {
+  text-align: left;
+}
+.head.data-v-5da2c81c {
+  margin-bottom: 100rpx;
+}
+.bottom.data-v-5da2c81c {
+  position: absolute;
+  z-index: 999;
+}
+
