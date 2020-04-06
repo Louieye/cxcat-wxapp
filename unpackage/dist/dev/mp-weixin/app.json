@@ -5,6 +5,7 @@
     "pages/menu/menu",
     "pages/goods-details/goods-details",
     "pages/appoin/appoin",
+    "pages/appoin/detail",
     "pages/dashboard/dashboard",
     "pages/action-sheet/action-sheet",
     "pages/badge/badge",

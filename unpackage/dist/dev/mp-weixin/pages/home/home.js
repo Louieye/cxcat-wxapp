@@ -208,10 +208,11 @@ var _toast = _interopRequireDefault(__webpack_require__(/*! ../../wxcomponents/v
 //
 var db = wx.cloud.database();var goods = db.collection('goods');var _default = { data: function data() {return { value: '', dataTable: [] };}, methods: { onChange: function onChange(event) {this.value = event.detail;}, onSearch: function onSearch(event) {uni.navigateTo({ url: '/pages/search/search?value=' + this.value });}, toDetails: function toDetails(id) {uni.navigateTo({ url: '/pages/goods-details/goods-details?value=' + id });} }, mounted: function mounted() {var _this = this;db.collection('goods').get().then(function (res) {// res.data 包含该记录的数据
       _this.dataTable = res.data;console.log(res);});wx.cloud.callFunction({ // 云函数名称
-      name: 'getUserInfo' // 传给云函数的参数
+      name: 'doLogin' // 传给云函数的参数
     }).
     then(function (res) {
-      console.log(res); // 3
+      console.log('doLogin返回', res);
+      uni.setStorageSync('openid', res.result.openid);
     }).
     catch(console.error);
   } };exports.default = _default;

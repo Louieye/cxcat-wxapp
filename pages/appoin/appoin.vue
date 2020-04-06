@@ -86,7 +86,9 @@
 					childName: '',
 					childAge: '',
 					phone: '',
-					date: ''
+					date: '',
+					tag: 0,
+					desc: ''
 				},
 				show: false,
 				errMsg: '',
@@ -103,14 +105,6 @@
 				}else{
 					 Toast('预约成功')
 					 const submitData = this.data
-					 this.data = {
-						title: '',
-						name: '',
-						childName: '',
-						childAge: '',
-						phone: '',
-						date: ''
-					}
 					appointment.add({
 					  // data 字段表示需新增的 JSON 数据
 					  data: submitData
@@ -120,6 +114,16 @@
 					      url: '/pages/home/home'
 					  })
 					})
+					this.data = {
+						title: '',
+						name: '',
+						childName: '',
+						childAge: '',
+						phone: '',
+						date: '',
+						desc: '',
+						tag: 0
+					}
 				}
 			},
 			onOpen(){

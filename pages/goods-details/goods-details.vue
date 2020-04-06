@@ -1,7 +1,6 @@
 <template>
 	<view class="main">
-		<scroll-view scroll-y="true" >
-		<van-cell-group class="head">
+		<van-cell-group class="cell-box">
 		<van-cell>
 		  <view slot="title">
 			  <image :src="dataTable.thumb" mode="aspectFit"></image>
@@ -11,7 +10,7 @@
 		</van-cell>
 		<van-cell>
 			<view class="price">
-				售价：¥ {{dataTable.price}}
+				售价：¥ {{dataTable.price || 0}}
 			</view>
 		</van-cell>
 		</van-cell-group>
@@ -35,12 +34,12 @@
 				</van-tabs>
 			</van-cell>
 		</van-cell-group>
-		</scroll-view>
 		<van-cell>
 			<van-goods-action class="bottom">
 			  <van-goods-action-icon
 			    icon="chat-o"
 			    text="客服"
+				open-type="contact"
 			    bind:click="onClickIcon"
 			  />
 			  <van-goods-action-icon
@@ -104,12 +103,15 @@
 		width: 100%;
 	}
 	.main {
-		background-color: rgb(241,241,241);
+		background-color: rgb(248, 248, 248);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 	.list {
 		text-align: left;
 	}
-	.head {
+	.cell-box {
 		margin-bottom: 100rpx;
 	}
 	.bottom {

@@ -18,7 +18,7 @@
 			<swiper-item><image src="../../static/img/lunbo4.jpg" mode="aspectFill"></image></swiper-item>
 		</swiper>
 		<view class="main">
-			<text>欢迎来到【程序猫】</text>
+			<text>推荐课程</text>
 			<view :key="item._id" v-for="item in dataTable" class="card">
 				<van-card :tag="item.tag" :desc="item.desc" :title="item.title" :thumb="item.thumb">
 					<view slot="footer"><van-button type="info" size="small" round @click="toDetails(item._id)">查 看</van-button></view>
@@ -63,11 +63,12 @@ export default {
 		});
 		wx.cloud.callFunction({
 			  // 云函数名称
-			  name: 'getUserInfo'
+			  name: 'doLogin'
 			  // 传给云函数的参数
 			})
 			.then(res => {
-			  console.log(res) // 3
+			  console.log('doLogin返回',res)
+			  uni.setStorageSync('openid',res.result.openid)
 			})
 			.catch(console.error)
 		}

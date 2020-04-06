@@ -754,7 +754,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1552,7 +1552,7 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 101:
+/***/ 111:
 /*!***********************************************************!*\
   !*** F:/work/Vant-app/wxcomponents/vant/dialog/dialog.js ***!
   \***********************************************************/
@@ -1621,7 +1621,7 @@ Dialog;exports.default = _default;
 
 /***/ }),
 
-/***/ 116:
+/***/ 126:
 /*!*********************************************!*\
   !*** F:/work/Vant-app/pages/icon/config.js ***!
   \*********************************************/
@@ -2163,7 +2163,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 147:
+/***/ 157:
 /*!***********************************************************!*\
   !*** F:/work/Vant-app/wxcomponents/vant/notify/notify.js ***!
   \***********************************************************/
@@ -7731,7 +7731,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7752,14 +7752,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7835,7 +7835,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8324,7 +8324,7 @@ function range(num, min, max) {
 
 /***/ }),
 
-/***/ 260:
+/***/ 270:
 /*!****************************************************!*\
   !*** F:/work/Vant-app/pages/tree-select/config.js ***!
   \****************************************************/
@@ -9302,7 +9302,18 @@ main();
 
 /***/ }),
 
-/***/ 59:
+/***/ 6:
+/*!******************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
+  \******************************************************/
+/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, license, main, name, repository, scripts, version, default */
+/***/ (function(module) {
+
+module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-26420200313001","_inBundle":false,"_integrity":"sha512-7dPuazTiDmUyRcw+WW+UlWGKH0eeCUB+p0P4pJVKEHjpdXnXgvDQCSdJk764NH99TfsUycnuxecP5oHckVa88g==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-26420200313001.tgz","_shasum":"a006e329e033cd412accfa635f8933dbb822a9c3","_spec":"@dcloudio/uni-stat@next","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"b1fdbafab5dd4673cff64188a5203d0c947e4f50","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-26420200313001"};
+
+/***/ }),
+
+/***/ 69:
 /*!**********************************!*\
   !*** F:/work/Vant-app/config.js ***!
   \**********************************/
@@ -9493,18 +9504,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 6:
-/*!******************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
-  \******************************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, license, main, name, repository, scripts, version, default */
-/***/ (function(module) {
+/***/ 7:
+/*!****************************************************!*\
+  !*** F:/work/Vant-app/pages.json?{"type":"style"} ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-26420200313001","_inBundle":false,"_integrity":"sha512-7dPuazTiDmUyRcw+WW+UlWGKH0eeCUB+p0P4pJVKEHjpdXnXgvDQCSdJk764NH99TfsUycnuxecP5oHckVa88g==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-26420200313001.tgz","_shasum":"a006e329e033cd412accfa635f8933dbb822a9c3","_spec":"@dcloudio/uni-stat@next","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"b1fdbafab5dd4673cff64188a5203d0c947e4f50","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-26420200313001"};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "navigationBarTitleText": "程序猫" }, "pages/user/user": { "navigationBarTitleText": "我的" }, "pages/menu/menu": { "navigationBarTitleText": "菜单" }, "pages/goods-details/goods-details": { "navigationBarTitleText": "详情" }, "pages/appoin/appoin": { "navigationBarTitleText": "课程预约" }, "pages/appoin/detail": { "navigationBarTitleText": "预约详情" }, "pages/dashboard/dashboard": { "navigationBarTitleText": "vant" }, "pages/action-sheet/action-sheet": { "navigationBarTitleText": "ActionSheet 上拉菜单" }, "pages/badge/badge": { "navigationBarTitleText": "Badge 徽章" }, "pages/cell/cell": { "navigationBarTitleText": "Cell 单元格" }, "pages/col/col": { "navigationBarTitleText": "Layout 布局" }, "pages/dialog/dialog": { "navigationBarTitleText": "dialog" }, "pages/field/field": { "navigationBarTitleText": "Field 输入框" }, "pages/icon/icon": { "navigationBarTitleText": "icon" }, "pages/loading/loading": { "navigationBarTitleText": "loading" }, "pages/nav-bar/nav-bar": { "navigationBarTitleText": "nav-bar" }, "pages/notice-bar/notice-bar": { "navigationBarTitleText": "notice-bar" }, "pages/notify/notify": { "navigationBarTitleText": "notify" }, "pages/panel/panel": { "navigationBarTitleText": "panel" }, "pages/popup/popup": { "navigationBarTitleText": "popup" }, "pages/progress/progress": { "navigationBarTitleText": "progress" }, "pages/stepper/stepper": { "navigationBarTitleText": "stepper" }, "pages/steps/steps": { "navigationBarTitleText": "steps" }, "pages/switch/switch": { "navigationBarTitleText": "switch" }, "pages/switch-cell/switch-cell": { "navigationBarTitleText": "SwitchCell 开关单元格" }, "pages/search/search": { "navigationBarTitleText": "search" }, "pages/slider/slider": { "navigationBarTitleText": "slider" }, "pages/tab/tab": { "navigationBarTitleText": "tab" }, "pages/tabbar/tabbar": { "navigationBarTitleText": "tabbar" }, "pages/tag/tag": { "navigationBarTitleText": "tag" }, "pages/toast/toast": { "navigationBarTitleText": "toast" }, "pages/transition/transition": { "navigationBarTitleText": "transition 动画" }, "pages/tree-select/tree-select": { "navigationBarTitleText": "TreeSelect 分类选择" }, "pages/area/area": { "navigationBarTitleText": "Area 省市区选择" }, "pages/submit-bar/submit-bar": { "navigationBarTitleText": "SubmitBar 提交订单栏" }, "pages/radio/radio": { "navigationBarTitleText": "radio" }, "pages/checkbox/checkbox": { "navigationBarTitleText": "checkbox" }, "pages/goods-action/goods-action": { "navigationBarTitleText": "GoodsAction 商品导航" }, "pages/swipe-cell/swipe-cell": { "navigationBarTitleText": "SwipeCell 滑动单元格" }, "pages/datetime-picker/datetime-picker": { "navigationBarTitleText": "DatetimePicker 时间选择" }, "pages/rate/rate": { "navigationBarTitleText": "Rate 评分" }, "pages/collapse/collapse": { "navigationBarTitleText": "collapse折叠面板" }, "pages/picker/picker": { "navigationBarTitleText": "Picker 选择器" } }, "globalStyle": { "navigationBarTitleText": "Vant For Uni-app", "navigationBarBackgroundColor": "#f8f8f8", "navigationBarTextStyle": "black", "backgroundTextStyle": "dark", "backgroundColor": "#f8f8f8" } };exports.default = _default;
 
 /***/ }),
 
-/***/ 60:
+/***/ 70:
 /*!***************************************!*\
   !*** F:/work/Vant-app/common/page.js ***!
   \***************************************/
@@ -9522,18 +9534,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   options));
 
 }
-
-/***/ }),
-
-/***/ 7:
-/*!****************************************************!*\
-  !*** F:/work/Vant-app/pages.json?{"type":"style"} ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "navigationBarTitleText": "首页", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "navigationBarTitleText": "我的", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/menu/menu": { "navigationBarTitleText": "菜单", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/goods-details/goods-details": { "navigationBarTitleText": "详情", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/appoin/appoin": { "navigationBarTitleText": "课程预约", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/dashboard/dashboard": { "navigationBarTitleText": "vant", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/action-sheet/action-sheet": { "navigationBarTitleText": "ActionSheet 上拉菜单", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/badge/badge": { "navigationBarTitleText": "Badge 徽章", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/cell/cell": { "navigationBarTitleText": "Cell 单元格", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/col/col": { "navigationBarTitleText": "Layout 布局", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/dialog/dialog": { "navigationBarTitleText": "dialog", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/field/field": { "navigationBarTitleText": "Field 输入框", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/icon/icon": { "navigationBarTitleText": "icon", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/loading/loading": { "navigationBarTitleText": "loading", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/nav-bar/nav-bar": { "navigationBarTitleText": "nav-bar", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/notice-bar/notice-bar": { "navigationBarTitleText": "notice-bar", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/notify/notify": { "navigationBarTitleText": "notify", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/panel/panel": { "navigationBarTitleText": "panel", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/popup/popup": { "navigationBarTitleText": "popup", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/progress/progress": { "navigationBarTitleText": "progress", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/stepper/stepper": { "navigationBarTitleText": "stepper", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/steps/steps": { "navigationBarTitleText": "steps", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/switch/switch": { "navigationBarTitleText": "switch", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/switch-cell/switch-cell": { "navigationBarTitleText": "SwitchCell 开关单元格", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/search/search": { "navigationBarTitleText": "search", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/slider/slider": { "navigationBarTitleText": "slider", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/tab/tab": { "navigationBarTitleText": "tab", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/tabbar/tabbar": { "navigationBarTitleText": "tabbar", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/tag/tag": { "navigationBarTitleText": "tag", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/toast/toast": { "navigationBarTitleText": "toast", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/transition/transition": { "navigationBarTitleText": "transition 动画", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/tree-select/tree-select": { "navigationBarTitleText": "TreeSelect 分类选择", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/area/area": { "navigationBarTitleText": "Area 省市区选择", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/submit-bar/submit-bar": { "navigationBarTitleText": "SubmitBar 提交订单栏", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/radio/radio": { "navigationBarTitleText": "radio", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/checkbox/checkbox": { "navigationBarTitleText": "checkbox", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/goods-action/goods-action": { "navigationBarTitleText": "GoodsAction 商品导航", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/swipe-cell/swipe-cell": { "navigationBarTitleText": "SwipeCell 滑动单元格", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/datetime-picker/datetime-picker": { "navigationBarTitleText": "DatetimePicker 时间选择", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/rate/rate": { "navigationBarTitleText": "Rate 评分", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/collapse/collapse": { "navigationBarTitleText": "collapse折叠面板", "usingComponents": { "wrap": "/components/wrap" }, "usingAutoImportComponents": {} }, "pages/picker/picker": { "navigationBarTitleText": "Picker 选择器", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTitleText": "Vant For Uni-app", "navigationBarBackgroundColor": "#f8f8f8", "navigationBarTextStyle": "black", "backgroundTextStyle": "dark", "backgroundColor": "#f8f8f8" } };exports.default = _default;
 
 /***/ }),
 

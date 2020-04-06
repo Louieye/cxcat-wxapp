@@ -1,0 +1,24 @@
+.body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.head {
+  margin-bottom: 100rpx;
+}
+.button-box {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 95%;
+  bottom: 0;
+}
+.button-box .van-button {
+    margin-bottom: 20rpx;
+}
+

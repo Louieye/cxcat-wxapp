@@ -3,7 +3,7 @@
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "程序猫"
 			}
 		},
 		{
@@ -28,6 +28,12 @@
 		    "path" : "pages/appoin/appoin",
 		    "style" : {
 				"navigationBarTitleText": "课程预约"
+			}
+		},
+		{
+		    "path" : "pages/appoin/detail",
+		    "style" : {
+				"navigationBarTitleText": "预约详情"
 			}
 		},
 		{"path": "pages/dashboard/dashboard","style":{"navigationBarTitleText":"vant"}},
