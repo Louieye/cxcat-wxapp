@@ -8,6 +8,11 @@
 .tab.data-v-5da2c81c {
   width: 100%;
 }
+.tab image.data-v-5da2c81c {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 .main.data-v-5da2c81c {
   background-color: #f8f8f8;
   display: -webkit-box;
@@ -21,6 +26,7 @@
           justify-content: space-around;
 }
 .list.data-v-5da2c81c {
+  margin-top: 50rpx;
   text-align: left;
 }
 .cell-box.data-v-5da2c81c {

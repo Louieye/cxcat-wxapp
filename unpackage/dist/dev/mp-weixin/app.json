@@ -6,6 +6,10 @@
     "pages/goods-details/goods-details",
     "pages/appoin/appoin",
     "pages/appoin/detail",
+    "pages/class-table/class-table",
+    "pages/reply/reply",
+    "pages/test/test",
+    "pages/join-class/join-class",
     "pages/dashboard/dashboard",
     "pages/action-sheet/action-sheet",
     "pages/badge/badge",
@@ -42,7 +46,12 @@
     "pages/datetime-picker/datetime-picker",
     "pages/rate/rate",
     "pages/collapse/collapse",
-    "pages/picker/picker"
+    "pages/picker/picker",
+    "pages/success/success",
+    "pages/reply-details/reply-details",
+    "pages/selectTest/selectTest",
+    "pages/test-result/test-result",
+    "pages/works/works"
   ],
   "subPackages": [],
   "window": {
@@ -128,5 +137,6 @@
     "van-collapse": "/wxcomponents/vant/collapse/index",
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index"
-  }
+  },
+  "sitemapLocation": "sitemap26.json"
 }

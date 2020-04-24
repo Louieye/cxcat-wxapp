@@ -1,0 +1,20 @@
+.head {
+  width: 100%;
+}
+.question {
+  padding-bottom: 50rpx;
+  width: 100%;
+}
+.question van-cell {
+    width: 100%;
+}
+.select {
+  width: 100%;
+  padding-top: 20rpx;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+

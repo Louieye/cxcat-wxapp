@@ -103,27 +103,26 @@
 				if(this.data.name == '' || this.data.phone == '' || this.errMsg != '' || this.errorMsg != ''){
 					Toast('信息填写不完整')
 				}else{
-					 Toast('预约成功')
 					 const submitData = this.data
 					appointment.add({
 					  // data 字段表示需新增的 JSON 数据
 					  data: submitData
 					})
 					.then(res => {
-					  uni.switchTab({
-					      url: '/pages/home/home'
+					  uni.redirectTo({
+					      url: '/pages/success/success'
 					  })
+					  // this.data = {
+					  // 	title: '',
+					  // 	name: '',
+					  // 	childName: '',
+					  // 	childAge: '',
+					  // 	phone: '',
+					  // 	date: '',
+					  // 	desc: '',
+					  // 	tag: 0
+					  // }
 					})
-					this.data = {
-						title: '',
-						name: '',
-						childName: '',
-						childAge: '',
-						phone: '',
-						date: '',
-						desc: '',
-						tag: 0
-					}
 				}
 			},
 			onOpen(){

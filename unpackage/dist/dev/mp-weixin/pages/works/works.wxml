@@ -1,0 +1,1 @@
+<view><block wx:for="{{imgList}}" wx:for-item="item" wx:for-index="__i0__" wx:key="_id"><view class="img-box"><view class="img"><image src="{{item.fileID}}"></image><text>{{"作者："+item.nickName}}</text></view></view></block></view>

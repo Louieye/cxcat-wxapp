@@ -1,0 +1,6 @@
+.button {
+  width: 95%;
+  margin-top: 50rpx;
+  margin-left: 2.5%;
+}
+

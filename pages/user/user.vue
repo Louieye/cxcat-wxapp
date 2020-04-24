@@ -17,12 +17,12 @@
 					<view class="meOverBg">
 						<view class="meVisitor">
 							<view class="meVisitorLt">
-								<view class="meVisitorTxt_02">0</view>
-								<view class="meVisitorTxt_01">模板1</view>
+								<view class="meVisitorTxt_02">{{classNum}}</view>
+								<view class="meVisitorTxt_01">我的课程</view>
 							</view>
 							<view class="meVisitorLt">
-								<view class="meVisitorTxt_02">0</view>
-								<view class="meVisitorTxt_01">模板2</view>
+								<view class="meVisitorTxt_02">{{worksNum}}</view>
+								<view class="meVisitorTxt_01">我的作品</view>
 							</view>
 						</view>
 					</view>
@@ -40,30 +40,22 @@
 						</van-cell-group>
 					</view>
 					<!--订单-->
-					
-					<!--其他-->
 					<view class="meOverBg">
-						<view class="businessList">
-							<view class="businessListTxt">其他1</view>
-							<view class="businessListYou"><image src="cloud://lyj-app.6c79-lyj-app-1301672818/icon/you.png"></image></view>
-						</view>
-						<view class="businessList">
-							<view class="businessListTxt">其他2</view>
-							<view class="businessListYou"><image src="cloud://lyj-app.6c79-lyj-app-1301672818/icon/you.png"></image></view>
-						</view>
+						<!-- <view class="meVisitorTitle">我的预约</view> -->
+						  <van-cell 
+						  icon="add-o"
+						  title="加入班级"
+						  is-link
+						  @click="joinClass" />
 					</view>
-					<!--其他-->
 					
 					<!--其他-->
 					<view class="meOverBg">
-						<view class="businessList">
-							<view class="businessListTxt"><image src="cloud://lyj-app.6c79-lyj-app-1301672818/icon/meIcon_01.png"></image>其他1</view>
-							<view class="businessListYou"><image src="cloud://lyj-app.6c79-lyj-app-1301672818/icon/you.png"></image></view>
-						</view>
-						<view class="businessList">
-							<view class="businessListTxt"><image src="../../static/icon/meIcon_01.png"></image>其他2</view>
-							<view class="businessListYou"><image src="cloud://lyj-app.6c79-lyj-app-1301672818/icon/you.png"></image></view>
-						</view>
+						<van-cell
+						icon="photo-o"
+						title="上传作品"
+						is-link
+						@click="choseImg" />
 					</view>
 					<!--其他-->
 					
@@ -71,11 +63,12 @@
 			</view>
 		</view>
 		<!--主体-->
-		
+		<van-toast id="van-toast"/>
 	</view>
 </template>
 
 <script>
+	import Toast from '../../wxcomponents/vant/toast/toast';
 	const db = wx.cloud.database();
 	export default{
 		data(){
@@ -84,13 +77,27 @@
 				nickName:'请授权登录',
 				token:'',
 				buttonShow: false,
-				appoinList: []
+				appoinList: [],
+				classNum: 0,
+				worksNum: 0
 			}
 		},
-		onLoad() {
-			
+		async onLoad() {
+			const openid = uni.getStorageSync('openid')
+			await db.collection('works').where({_openid : openid}).get().then(res => {
+				this.worksNum = res.data.length
+			})
 		},
-		onShow() {
+		async onShow() {
+			await wx.cloud.callFunction({
+			  // 要调用的云函数名称
+			  name: 'getClassTable'
+			}).then(res => {
+			  // this.list = res.result.data.classId
+			  this.classNum = res.result.result.data.length
+			}).catch(err => {
+			  // handle error
+			})
 			this.getUserInfo()
 			this.token = uni.getStorageSync('token');
 			this.isLogin = uni.getStorageSync('isLogin')
@@ -131,6 +138,52 @@
 			  toDetail(id){
 				  uni.navigateTo({
 				  	url:"/pages/appoin/detail?_id=" + id
+				  })
+			  },
+			  joinClass(){
+				  uni.navigateTo({
+				  	url:"/pages/join-class/join-class"
+				  })
+			  },
+			  choseImg(){
+				  let nickName = ''
+				  if(this.nickName == '请授权登录'){
+				  	nickName = '无名'
+				  }else{
+				  	nickName = this.nickName
+				  }
+				  wx.chooseImage({
+				    sizeType: ['original', 'compressed'],
+				    sourceType: ['album', 'camera'],
+				    success (res) {
+				      // tempFilePath可以作为img标签的src属性显示图片
+					  wx.showLoading({
+					    title: '上传中',
+					  });
+					  let filePath = res.tempFilePaths[0];
+					  const name = Math.random() * 1000000;
+					  const cloudPath = 'works/' + name + filePath.match(/\.[^.]+?$/)[0]
+					  wx.cloud.uploadFile({
+					    cloudPath,
+					    filePath, // 文件路径
+					  }).then(res => {
+						const data = {
+							fileID: res.fileID,
+							nickName
+						}
+					    db.collection('works').add({
+							data
+						}).then(res => {
+							wx.hideLoading()
+							Toast('上传成功')
+							this.worksNum++
+						})
+					    console.log(res.fileID)
+					  }).catch(error => {
+					    wx.hideLoading()
+					    Toast('上传失败')
+					  })
+				    }
 				  })
 			  }
 		}

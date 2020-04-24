@@ -36,6 +36,30 @@
 				"navigationBarTitleText": "预约详情"
 			}
 		},
+		{
+		    "path" : "pages/class-table/class-table",
+		    "style" : {
+				"navigationBarTitleText": "课程表"
+			}
+		},
+		{
+		    "path" : "pages/reply/reply",
+		    "style" : {
+				"navigationBarTitleText": "课程反馈"
+			}
+		}
+		,{
+		    "path" : "pages/test/test",
+		    "style" : {
+				"navigationBarTitleText": "小测验"
+			}
+		}
+		,{
+		    "path" : "pages/join-class/join-class",
+		    "style" : {
+				"navigationBarTitleText": "加入班级"
+			}
+		},
 		{"path": "pages/dashboard/dashboard","style":{"navigationBarTitleText":"vant"}},
 		{"path": "pages/action-sheet/action-sheet","style":{"navigationBarTitleText":"ActionSheet 上拉菜单"}},
 		{"path": "pages/badge/badge","style":{"navigationBarTitleText":"Badge 徽章"}},
@@ -73,7 +97,37 @@
 		{"path": "pages/rate/rate","style":{"navigationBarTitleText":"Rate 评分"}},
 		{"path": "pages/collapse/collapse","style":{"navigationBarTitleText":"collapse折叠面板"}},
 		{"path": "pages/picker/picker","style":{"navigationBarTitleText":"Picker 选择器"}}
-	    
+    
+        ,{
+            "path" : "pages/success/success",
+            "style" : {
+				"navigationBarTitleText": "成功"
+			}
+        }
+        ,{
+            "path" : "pages/reply-details/reply-details",
+            "style" : {
+				"navigationBarTitleText": "详情"
+			}
+        }
+        ,{
+            "path" : "pages/selectTest/selectTest",
+            "style" : {
+				"navigationBarTitleText": "小测验"
+			}
+        }
+        ,{
+            "path" : "pages/test-result/test-result",
+            "style" : {
+				"navigationBarTitleText": "测验结果"
+			}
+        }
+        ,{
+            "path" : "pages/works/works",
+            "style" : {
+				"navigationBarTitleText": "作品欣赏"
+			}
+        }
     ],
 	"tabBar": {
 		"color": "#7a7e83",

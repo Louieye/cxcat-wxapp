@@ -1,0 +1,6 @@
+.class-text {
+  position: relative;
+  left: 41%;
+  color: gray;
+}
+

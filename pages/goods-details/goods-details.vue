@@ -16,11 +16,14 @@
 		</van-cell-group>
 		<van-cell-group>
 			<van-cell>
-				<van-tabs :active="active" bind:change="onChange" class="tab">
+				<van-tabs :active="active" bind:change="onChange" class="tab" sticky>
 				  <van-tab title="介绍">
 					  <view class="list">
 					  	{{dataTable.details}}
 					  </view>
+					  <image src="cloud://lyj-app.6c79-lyj-app-1301672818/goodsImg/demo1-3.jpg" mode="aspectFill"></image>
+					  <image src="cloud://lyj-app.6c79-lyj-app-1301672818/goodsImg/demo1-1.jpg" mode="aspectFill"></image>
+					  <image src="cloud://lyj-app.6c79-lyj-app-1301672818/goodsImg/demo1-2.jpg" mode="aspectFill"></image>
 				  </van-tab>
 				  <van-tab title="目录">
 					  <view v-for="item in dataTable.list" class="list">
@@ -101,6 +104,11 @@
 	} 
 	.tab {
 		width: 100%;
+		image {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
 	}
 	.main {
 		background-color: rgb(248, 248, 248);
@@ -109,6 +117,7 @@
 		justify-content: space-around;
 	}
 	.list {
+		margin-top: 50rpx;
 		text-align: left;
 	}
 	.cell-box {
